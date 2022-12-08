@@ -40,7 +40,7 @@ You should now have several key pieces of data which will be used in the upcomin
 ### Deploying the infrastructure
 Creating the cloud and on-prem environmnets in Azure can be done in one of two ways. You can use the Bicep command line, which is easiest if you are running this repo multiple times for development. Or you can use the Azure Portal user experience, which is easiest for a one-off deployment. Both create identical environments.
   - Azure Portal
-    - To use reasonable default values, simply click [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/[https%3A%2F%2Fraw.githubusercontent.com%2FStevenBorg%2Fahds_dicom_service_demos%2Fmain%2Fdemos%2Frsna%2Fdeploy-rsna-demo-on-prem.json](https://raw.githubusercontent.com/StevenBorg/RSNA-2022-Demo/main/environments/all-up-demo-deployment.json))
+    - To use reasonable default values, simply click [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/[https%3A%2F%2Fraw.githubusercontent.com%2FStevenBorg%2FRSNA-2022-Demo%2Fmain%2Fenvironments%2Fall-up-demo-deployment.json](https://raw.githubusercontent.com/StevenBorg/RSNA-2022-Demo/main/environments/all-up-demo-deployment.json))
     - Fill in required information
       - Select an Azure subscription
       - Create a new Resource Group
