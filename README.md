@@ -35,16 +35,32 @@ You should now have several key pieces of data which will be used in the upcomin
 - Application (client) ID
 - Directory (tenant) ID
 - Client secret
-- Pricipal Object ID of the App Registration
+- Principal Object ID of the App Registration
 
 ### Deploying the infrastructure
 Creating the cloud and on-prem environmnets in Azure can be done in one of two ways. You can use the Bicep command line, which is easiest if you are running this repo multiple times for development. Or you can use the Azure Portal user experience, which is easiest for a one-off deployment. Both create identical environments.
   - Azure Portal
     - To use reasonable default values, simply click [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FStevenBorg%2FRSNA-2022-Demo%2Fmain%2Fenvironments%2Fall-up-demo-deployment.json)
     - Fill in required information
+    - ![Steps to deploy using the Portal](../readme-images/steps-deploy-full-infra-using-portal.png "Steps to deploy using the Portal").
       - Select an Azure subscription
       - Create a new Resource Group
       - Select an Azure region 
+      - Choose a complex administrator password that will be used in key places in the demo script
+      - Provide a user login name. (_student_ is used in the demo script.)
+      - Provide a globally unique name for the AHDS workspace (which will be part of the DICOM URL)
+      - Provide a DICOM service name (which need only be locally unique, but cannot be simply 'dicom')
+      - Enter the Tenant ID you captured earlier
+      - Enter the App Registration ID you captured earlier
+      - Enter the App Client Secret you captured earlier
+      - Enter the Principal Object ID of the App Registration you captured earlier
+    - Click the `Review and Create` button
+
+### Retrieving a Qvera QIE license
+The Qvera QIE DICOM router requires a license key to run. A 90-day trial license is easily available at https://www.qvera.com/hl7-interface-engine/#get-started-section. Scroll down to click the **Start a Free 90-day Trial** button, enter some information, and a key will be emailed immediately to your account.
+
+### Running the Demo
+Download and open the student-instructions.pdf file available at the root of this Github repo. It will walk you through the end-to-end demo.
 
 
 
