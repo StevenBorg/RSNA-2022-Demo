@@ -4,8 +4,8 @@
   "metadata": {
     "_generator": {
       "name": "bicep",
-      "version": "0.12.40.16777",
-      "templateHash": "14099021514469413394"
+      "version": "0.13.1.58284",
+      "templateHash": "3001120095262280472"
     }
   },
   "parameters": {
@@ -110,8 +110,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.12.40.16777",
-              "templateHash": "766685691948795609"
+              "version": "0.13.1.58284",
+              "templateHash": "6818677686393135364"
             }
           },
           "parameters": {
@@ -421,7 +421,7 @@
                   ]
                 },
                 "protectedSettings": {
-                  "commandToExecute": "powershell C:/Packages/Plugins/Microsoft.Compute.CustomScriptExtension/1.10.12/Downloads/0/run-needed-powershell.ps1"
+                  "commandToExecute": "powershell ./run-needed-powershell.ps1"
                 }
               },
               "dependsOn": [
@@ -512,8 +512,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.12.40.16777",
-              "templateHash": "15976694330515930344"
+              "version": "0.13.1.58284",
+              "templateHash": "11497304868791872100"
             }
           },
           "parameters": {
@@ -759,8 +759,8 @@
                   "metadata": {
                     "_generator": {
                       "name": "bicep",
-                      "version": "0.12.40.16777",
-                      "templateHash": "260705303214093131"
+                      "version": "0.13.1.58284",
+                      "templateHash": "6159262612800187580"
                     }
                   },
                   "parameters": {
@@ -922,8 +922,8 @@
           "metadata": {
             "_generator": {
               "name": "bicep",
-              "version": "0.12.40.16777",
-              "templateHash": "10988786105082213151"
+              "version": "0.13.1.58284",
+              "templateHash": "8974945101473966743"
             }
           },
           "parameters": {
