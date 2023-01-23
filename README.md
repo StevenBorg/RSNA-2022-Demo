@@ -61,11 +61,3 @@ The Qvera QIE DICOM router requires a license key to run. A 90-day trial license
 
 ### Running the Demo
 Download and open the student-instructions.pdf file available at the root of this Github repo. It will walk you through the end-to-end demo.
-
-
-
-
-
-
-
-

@@ -228,7 +228,10 @@ resource extension 'Microsoft.Compute/virtualMachines/extensions@2022-08-01' = {
       // The following works!  Powershell C:/xxx
       //  But very worried about the path changing based on typeHandlerVersion which I don't understand
       //  Unfortunately, removing the path results in a failure as it can't find the script. :-()
-      commandToExecute: 'powershell C:/Packages/Plugins/Microsoft.Compute.CustomScriptExtension/1.10.12/Downloads/0/run-needed-powershell.ps1'
+      //commandToExecute: 'powershell C:/Packages/Plugins/Microsoft.Compute.CustomScriptExtension/1.10.12/Downloads/0/run-needed-powershell.ps1'
+
+      // This is from https://learn.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-windows#troubleshoot-and-support
+      commandToExecute: 'powershell ./run-needed-powershell.ps1'
       // Below didn't work
       //commandToExecute: 'powershell $PSScriptRoot/run-needed-powershell.ps1'
     }
