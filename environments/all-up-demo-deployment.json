@@ -5,7 +5,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.13.1.58284",
-      "templateHash": "15240521038967294969"
+      "templateHash": "7157060782656264039"
     }
   },
   "parameters": {
@@ -111,7 +111,7 @@
             "_generator": {
               "name": "bicep",
               "version": "0.13.1.58284",
-              "templateHash": "15875016843912472101"
+              "templateHash": "3001120095262280472"
             }
           },
           "parameters": {
@@ -217,7 +217,7 @@
                     "_generator": {
                       "name": "bicep",
                       "version": "0.13.1.58284",
-                      "templateHash": "83950458824805898"
+                      "templateHash": "6818677686393135364"
                     }
                   },
                   "parameters": {
@@ -527,7 +527,7 @@
                           ]
                         },
                         "protectedSettings": {
-                          "commandToExecute": "powershell C:/Packages/Plugins/Microsoft.Compute.CustomScriptExtension/1.10.12/Downloads/0/run-needed-powershell.ps1"
+                          "commandToExecute": "powershell ./run-needed-powershell.ps1"
                         }
                       },
                       "dependsOn": [
