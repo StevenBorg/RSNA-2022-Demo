@@ -80,4 +80,37 @@ Connecting the DICOM service to the existing network requires the configuration 
     2. In the Open QIE Configuration File dialog, use the ellipsis (…) button to select the configuration file.  Browse to the desktop and select `qie_MicrosoftDICOM_20221123.qie`.  Select **Open** to open the config file.
     3. In the Import Configuration dialog, select the **checkbox next to the MicrosoftDICOM** zone to import all channels.
     4. Select the **Import Sample Messages** option and select **Import**.
+    ![Import sample messages](/demo-environment-images/import-dialog.png)
+8. Before QIE can connect to the DICOM service, you will need to [register a client application with AAD](https://learn.microsoft.com/azure/healthcare-apis/dicom/dicom-register-application).  
 
+    > Make note of the **application ID** and **client secret** when registering the client application.
+    > 
+    > Also, note the authorization URL from the **Endpoints** pane on the Overview page.  You'll need the **OAuth 2.0 token endpoint (v1)**
+
+9. Configure the web service connection.  This enables the router to communicate with the DICOM service.  
+    1. Select the **MicrosoftDICOM** zone to expand the zone details.
+    ![Select Microsoft DICOM](/demo-environment-images/microsoft-dicom-zone.png)
+    2. Select **Web Service Connections** and then **MicrosoftDICOMWeb**.
+    ![Web service connections](/demo-environment-images/web-service-connections.png)
+    3. In the **Endpoint** URL box, enter the **DICOM service URL**.  You can find the URL in the Azure portal by browsing to **Resource Groups `>` rsna_workshop_studentN `>` DICOM Service `>` Overview `>` Service URL**.  
+    
+        > The service URL will be in a format like, https://myws-mydicom.dicom.azurehealthcareapis.com
+
+        ![Endpoint URL and authentication](/demo-environment-images/url-auth-details.png)
+
+    4. In the **Username** box, enter in the **Application ID** from the Azure Active Directory app registration process.  This is the ID the router uses to authenticate to the DICOM service.  
+    5. In the **Password** box, enter in the **Client secret** from the app registration process.  This is the client secret that is used to generate authentication tokens.  
+    6. In the **Auth URL** box, enter in the **Auth URL** for the DICOM service. 
+
+        > The auth URL should be in a format like, https://login.microsoftonline.com/0a0a0a0a-20ac-4545-9999-6ef19807994e/oauth2/token
+
+    7. From the menu bar, select **Save** to save the web service connection.
+    8. Test the connection by selecting the **Test OAuth** button (you may need to scroll down).  
+
+        ![Test OAuth](/demo-environment-images/test-oauth.png)
+    
+        > In the test log, you should see a 200 OK response and “Bearer” token returned by the service.
+
+        ![Token response](/demo-environment-images/token-response.png)
+
+10. Test the connection to the PACS system (Orthanc).  This ensures the connection from the router to the PACS system is working correctly.
