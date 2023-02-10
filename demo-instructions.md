@@ -57,7 +57,8 @@ The cloud infrastructure contains two additional systems that interact with the 
     3. Select a series from the list to view the series details.
     ![Select a series](/demo-environment-images/select-series.png)
 11. Select the **Osimis Web Viewer** option to see the image.
-![Select Osimis Web Viewer](/demo-environment-images/pacs-viewer.png)
+
+    ![Select Osimis Web Viewer](/demo-environment-images/pacs-viewer.png)
 
 ## 🌟 Simulate a new study from a modality
 To simulate modalities that are producing new imaging studies, we will use a local script that sends DICOM data to the PACS.  These new studies are from November 2022.
