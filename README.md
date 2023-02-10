@@ -60,4 +60,4 @@ Creating the cloud and on-prem environmnets in Azure can be done in one of two w
 The Qvera QIE DICOM router requires a license key to run. A 90-day trial license is easily available at https://www.qvera.com/hl7-interface-engine/#get-started-section. Scroll down to click the **Start a Free 90-day Trial** button, enter some information, and a key will be emailed immediately to your account.
 
 ### Running the Demo
-Download and open the student-instructions.pdf file available at the root of this Github repo. It will walk you through the end-to-end demo.
+Check out the [demo instructions](demo-instructions.md) for detailed steps to configure and try out the environment.  
