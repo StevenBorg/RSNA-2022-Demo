@@ -30,7 +30,7 @@ The cloud infrastructure contains two additional systems that interact with the 
 2. Select **Resource Groups** from the Azure services menu.  
 3. Select the resource group that you selected in the deployment template.  
 4. The overview page lists all resources in the resource group.  Note the container instances for the applications listed above as well as additional storage and networking components needed to simulate the network. 
-    ![Resource Group overview](/demo-environment-images/resource-group.png)
+![Resource Group overview](/demo-environment-images/resource-group.png)
 5. Select the **jump-vm** virtual machine.  You will connect to this virtual machine to simulate viewing the PACS from within the network.
 6. Download the Remote Desktop RDP file.
     1. Select **Connect** under the Settings section.
@@ -57,7 +57,7 @@ The cloud infrastructure contains two additional systems that interact with the 
     3. Select a series from the list to view the series details.
     ![Select a series](/demo-environment-images/select-series.png)
 11. Select the **Osimis Web Viewer** option to see the image.
-    ![Select Osimis Web Viewer](/demo-environment-images/pacs-viewer.png)
+![Select Osimis Web Viewer](/demo-environment-images/pacs-viewer.png)
 
 ## 🌟 Simulate a new study from a modality
 To simulate modalities that are producing new imaging studies, we will use a local script that sends DICOM data to the PACS.  These new studies are from November 2022.
