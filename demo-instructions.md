@@ -83,48 +83,55 @@ Connecting the DICOM service to the existing network requires the configuration 
     4. Select the **Import Sample Messages** option and select **Import**.
     ![Import sample messages](/demo-environment-images/import-dialog.png)
 8. Before QIE can connect to the DICOM service, you will need to [register a client application with AAD](https://learn.microsoft.com/azure/healthcare-apis/dicom/dicom-register-application).  
-
+    1. Go to the App registrations, add find the Azure API for DICOM. ![Add API Permissions](demo-environment-images/add-api-permission.png)
+    2. Select DICOM.ReadWrite permissions and click Add permissions. ![Select DICOM.ReadWrite](demo-environment-images/add-dicom-read-write-permission.png)
     > Make note of the **application ID** and **client secret** when registering the client application.
     > 
     > Also, note the authorization URL from the **Endpoints** pane on the Overview page.  You'll need the **OAuth 2.0 token endpoint (v1)**
 
 9. Configure the web service connection.  This enables the router to communicate with the DICOM service.  
     1. Select the **MicrosoftDICOM** zone to expand the zone details.
-    ![Select Microsoft DICOM](/demo-environment-images/microsoft-dicom-zone.png)
+    ![Select Microsoft DICOM](demo-environment-images/microsoft-dicom-zone.png)
     2. Select **Web Service Connections** and then **MicrosoftDICOMWeb**.
-    ![Web service connections](/demo-environment-images/web-service-connections.png)
-    3. In the **Endpoint** URL box, enter the **DICOM service URL**.  You can find the URL in the Azure portal by browsing to **Resource Groups `>` rsna_workshop_studentN `>` DICOM Service `>` Overview `>` Service URL**.  
-    
-        > The service URL will be in a format like, https://myws-mydicom.dicom.azurehealthcareapis.com
+    ![Web service connections](demo-environment-images/web-service-connections.png)
+    3. The following fields must be updated: **Endpoint URL**, **Username**, **Password**, and **Auth URL**.
 
-        ![Endpoint URL and authentication](/demo-environment-images/url-auth-details.png)
+        ![Endpoint URL and authentication](demo-environment-images/url-auth-details.png)
 
-    4. In the **Username** box, enter in the **Application ID** from the Azure Active Directory app registration process.  This is the ID the router uses to authenticate to the DICOM service.  
-    5. In the **Password** box, enter in the **Client secret** from the app registration process.  This is the client secret that is used to generate authentication tokens.  
-    6. In the **Auth URL** box, enter in the **Auth URL** for the DICOM service. 
+    4. In the Qvera **Endpoint URL** box, enter the Azure DICOM **Service URL**. You can find the URL in the Azure portal by browsing to **Resource Groups `>` rsna_workshop_studentN `>` DICOM Service `>` Overview `>` Service URL**.
+       > The service URL will be in a format like, https://myws-mydicom.dicom.azurehealthcareapis.com
+        ![DICOM Service URL](demo-environment-images/dicom-service-url-azure-location.png)
+    5. In the Qvera **Username** box, enter the Azure **Application (client) ID** from the Azure Active Directory app registration process.
+        ![Application (client) ID](demo-environment-images/application-client-id-azure-location.png)  
+    6. In the Qvera **Password** box, enter the Azure **Client secret Value** from the app registration process.  This is the client secret that is used to generate authentication tokens.
+   
+       > This should have been saved previously.  If unknown, a new client secret may need to be created.
+   
+    7. In the Qvera **Auth URL** box, enter the Azure **OAuth 2.0 token endpoint (v1)** for the DICOM service.
+        
+       > The auth URL should be in a format like, https://login.microsoftonline.com/0a0a0a0a-20ac-4545-9999-6ef19807994e/oauth2/token
+       
+        ![Auth URL](demo-environment-images/auth-url-azure-location.png)
+    8. From the menu bar, select **Save** to save the web service connection.
+    9. Test the connection by selecting the **Test OAuth** button (you may need to scroll down).  
 
-        > The auth URL should be in a format like, https://login.microsoftonline.com/0a0a0a0a-20ac-4545-9999-6ef19807994e/oauth2/token
-
-    7. From the menu bar, select **Save** to save the web service connection.
-    8. Test the connection by selecting the **Test OAuth** button (you may need to scroll down).  
-
-        ![Test OAuth](/demo-environment-images/test-oauth.png)
+        ![Test OAuth](demo-environment-images/test-oauth.png)
     
         > In the test log, you should see a 200 OK response and “Bearer” token returned by the service.
 
-        ![Token response](/demo-environment-images/token-response.png)
+        ![Token response](demo-environment-images/token-response.png)
 
 10. Test the connection to the PACS system (Orthanc).  This ensures the connection from the router to the PACS system is working correctly.
     1. Select **DICOM connections** from the MicrosoftDICOM zone.
     2. Select **ORTHANC** from the list of connections.
     3. Select **Test Connection**.  Click **OK** in the Caling AE Title dialog to run the test. You should see a "Connection Successful" message.
 
-        ![Test connection for Orthanc](/demo-environment-images/test-connection-orthanc.png)
+        ![Test connection for Orthanc](demo-environment-images/test-connection-orthanc.png)
 
 11. Select the **Channels** view from the MicrosoftDICOM zone.  This view displays the channels that define the rules for how to route data between the modalities, PACS, and DICOM service.  
     1. Select the **DIMSE to DICOMWEB** and select **Start**.  This channel maps the DIMSE CFIND and CMOVE commands and translates them into the appropriate DICOMWeb WADO and STOW commands.  
 
-        ![Start channels](/demo-environment-images/start-channels.png)
+        ![Start channels](demo-environment-images/start-channels.png)
     2. Select **DIMSE C-MOVE Processor** and select **Start**.  This channel supports CMOVE operations.  
     3. Select **DICOM Router** and select **Start**.  This channel supports sending data from modalities to both the PACS and the DICOM service.
 
@@ -136,11 +143,11 @@ With the router configuration complete, the routing capability can be used to se
 3. Find a study for the patient named "**Jule**" and select it from the list to view the study details.
 4. Select **Send to DICOM modality** action.
 
-    ![Send to DICOM modality](/demo-environment-images/send-to-dicom.png)
+    ![Send to DICOM modality](demo-environment-images/send-to-dicom.png)
 
 5. In the list of targets, select **QIETOAZURE** to send the study to the router, which will send to the DICOM service.
 
-    ![QIE to Azure](/demo-environment-images/qie-to-azure.png)
+    ![QIE to Azure](demo-environment-images/qie-to-azure.png)
 
 6. After sending the study, a message about the queued job will be should be shown in Orthanc.  A success message will be shown in the “general information” section.
 7. Navigate to QIE
