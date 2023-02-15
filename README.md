@@ -38,7 +38,7 @@ You should now have several key pieces of data which will be used in the upcomin
 - Principal Object ID of the App Registration
 
 ### Deploying the infrastructure
-Creating the cloud and on-prem environmnets in Azure can be done in one of two ways. You can use the Bicep command line, which is easiest if you are running this repo multiple times for development. Or you can use the Azure Portal user experience, which is easiest for a one-off deployment. Both create identical environments.
+Creating the cloud and on-prem environments in Azure can be done in one of two ways. You can use the Bicep command line, which is easiest if you are running this repo multiple times for development. Or you can use the Azure Portal user experience, which is easiest for a one-off deployment. Both create identical environments.
 
 #### Deploy using the Azure Portal
 To use reasonable default values, simply click [![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FStevenBorg%2FRSNA-2022-Demo%2Fmain%2Fenvironments%2Fall-up-demo-deployment.json)
