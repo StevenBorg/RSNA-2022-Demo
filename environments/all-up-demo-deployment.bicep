@@ -1,6 +1,6 @@
 
 // This script deploys the on-prem solution 
-@description('Administrator Password for Orthanc.')
+@description('Administrator Password for the jumpbox.  Must contain a mix of uppercase, lowercase, and numeric characters.')
 @minLength(12)
 @secure()
 param adminPassword string

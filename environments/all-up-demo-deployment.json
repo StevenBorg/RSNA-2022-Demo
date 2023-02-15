@@ -13,7 +13,7 @@
       "type": "secureString",
       "minLength": 12,
       "metadata": {
-        "description": "Administrator Password for Orthanc."
+        "description": "Administrator Password for the jumpbox.  Must contain a mix of uppercase, lowercase, and numeric characters."
       }
     },
     "location": {
