@@ -98,7 +98,7 @@ Connecting the DICOM service to the existing network requires the configuration 
 
         ![Endpoint URL and authentication](demo-environment-images/url-auth-details.png)
 
-    4. In the Qvera **Endpoint URL** box, enter the Azure DICOM **Service URL**. You can find the URL in the Azure portal by browsing to **Resource Groups `>` rsna_workshop_studentN `>` DICOM Service `>` Overview `>` Service URL**.
+    4. In the Qvera **Endpoint URL** box, enter the Azure DICOM **Service URL**. You can find the URL in the Azure portal by browsing to **Resource Groups `>` _your resource group_ `>` DICOM Service `>` Overview `>` Service URL**.
        > The service URL will be in a format like, https://myws-mydicom.dicom.azurehealthcareapis.com
         ![DICOM Service URL](demo-environment-images/dicom-service-url-azure-location.png)
     5. In the Qvera **Username** box, enter the Azure **Application (client) ID** from the Azure Active Directory app registration process.
