@@ -45,18 +45,18 @@ To use reasonable default values, simply click [![Deploy to Azure](https://aka.m
 
 Fill in required information in the template: 
 ![Steps to deploy using the Portal](readme-images/steps-deploy-full-infra-using-portal.png "Steps to deploy using the Portal")
-1. Select an Azure subscription
-2. Create a new Resource Group
-3. Select an Azure region 
-4. Choose a complex administrator password that will be used in key places in the demo script
-5. Provide a user login name. (_student_ is used in the demo script.)
-6. Provide a globally unique name for the AHDS workspace (which will be part of the DICOM URL)
-7. Provide a DICOM service name (which need only be locally unique, but cannot be simply 'dicom')
-8. Enter the Tenant ID you captured earlier
-9. Enter the App Registration ID you captured earlier
-10. Enter the App Client Secret you captured earlier
-11. Enter the Principal Object ID of the App Registration you captured earlier
-12. Click the `Review and Create` button
+1. Select an Azure subscription.
+2. Create a new Resource Group.  Creating a new resource group makes it easy to delete the entire group when you are done with the demo environment.  
+3. Select an Azure region.
+4. Choose a complex administrator password that will be used in key places in the demo script.
+5. Provide a user login name (_student_ is used in the demo script).
+6. Provide a globally unique name for the AHDS workspace (which will be part of the DICOM URL).
+7. Provide a DICOM service name (which need only be locally unique, but cannot be simply 'dicom').
+8. Enter the Tenant ID you captured earlier.
+9. Enter the App Registration ID you captured earlier.
+10. Enter the App Client Secret you captured earlier.
+11. Enter the Principal Object ID of the App Registration you captured earlier.
+12. Click the `Review and Create` button.
 
 ### Retrieving a Qvera QIE license
 The Qvera QIE DICOM router requires a license key to run. A 90-day trial license is easily available at https://www.qvera.com/hl7-interface-engine/#get-started-section. Scroll down to click the **Start a Free 90-day Trial** button, enter some information, and a key will be emailed immediately to your account.
